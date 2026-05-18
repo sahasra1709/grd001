@@ -7,10 +7,9 @@ pipeline {
     }
 
     stages {
-
         stage('Build') {
             steps {
-                bat 'gradle build'
+                bat 'gradle clean build'
             }
         }
 
@@ -25,9 +24,10 @@ pipeline {
                 bat 'gradle assemble'
             }
         }
+
         stage('Run') {
             steps {
-                bat 'gradle run'
+                bat 'gradle :app:run'
             }
         }
     }
