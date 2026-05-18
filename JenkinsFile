@@ -9,25 +9,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'gradle clean build'
+                bat 'gradlew.bat clean build'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'gradle test'
+                bat 'gradlew.bat test'
             }
         }
 
         stage('Package') {
             steps {
-                bat 'gradle assemble'
+                bat 'gradlew.bat assemble'
             }
         }
 
         stage('Run') {
             steps {
-                bat 'gradle :app:run'
+                bat 'gradlew.bat :app:run'
             }
         }
     }
